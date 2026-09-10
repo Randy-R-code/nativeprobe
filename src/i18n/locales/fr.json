@@ -25,18 +25,64 @@
     "unsupported": "Non supporté",
     "unknown": "Inconnu"
   },
+  "common": {
+    "yes": "Oui",
+    "no": "Non",
+    "notAvailable": "Non disponible",
+    "portrait": "Portrait",
+    "landscape": "Paysage"
+  },
   "probe": {
     "device": {
       "title": "Appareil",
-      "description": "Plateforme, version OS, modèle et fabricant de l'appareil actuel."
+      "description": "Plateforme, version OS, modèle et fabricant de l'appareil actuel.",
+      "field": {
+        "platform": "Plateforme",
+        "osVersion": "Version OS",
+        "model": "Modèle",
+        "deviceName": "Nom de l'appareil",
+        "manufacturer": "Fabricant",
+        "deviceType": "Type d'appareil",
+        "physicalDevice": "Appareil physique"
+      },
+      "deviceType": {
+        "phone": "Téléphone",
+        "tablet": "Tablette",
+        "desktop": "Ordinateur",
+        "tv": "TV",
+        "unknown": "Inconnu"
+      }
     },
     "display": {
       "title": "Écran",
-      "description": "Dimensions, ratio de pixels, orientation et zone sûre."
+      "description": "Dimensions, ratio de pixels, orientation et zone sûre.",
+      "field": {
+        "width": "Largeur (pt)",
+        "height": "Hauteur (pt)",
+        "pixelRatio": "Ratio de pixels",
+        "fontScale": "Échelle de police",
+        "orientation": "Orientation",
+        "safeAreaTop": "Zone sûre haut",
+        "safeAreaBottom": "Zone sûre bas",
+        "safeAreaLeft": "Zone sûre gauche",
+        "safeAreaRight": "Zone sûre droite"
+      }
     },
     "battery": {
       "title": "Batterie",
-      "description": "Niveau de batterie, état de charge et mode basse consommation."
+      "description": "Niveau de batterie, état de charge et mode basse consommation.",
+      "field": {
+        "level": "Niveau de batterie",
+        "state": "État de charge",
+        "lowPowerMode": "Mode basse consommation"
+      },
+      "state": {
+        "unknown": "Inconnu",
+        "unplugged": "Débranché",
+        "charging": "En charge",
+        "full": "Pleine",
+        "notCharging": "Pas en charge"
+      }
     },
     "network": {
       "title": "Réseau",

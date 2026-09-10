@@ -6,6 +6,8 @@
     "@expo/vector-icons": "^15.0.2",
     "clsx": "^2.1.1",
     "expo": "~57.0.21",
+    "expo-battery": "~57.0.2",
+    "expo-device": "~57.0.1",
     "expo-localization": "~57.0.1",
     "expo-router": "~57.0.20",
     "expo-status-bar": "~57.0.1",

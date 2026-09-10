@@ -3,10 +3,32 @@ import type { ProbeCategory, ProbeDefinition, ProbeId } from './types';
 // Every V1 probe registers here with its metadata so the Overview screen is
 // generated from data instead of hardcoded repeated UI (spec §7). Real
 // `getAvailability` detection logic lands per-probe in later milestones —
-// for now every probe reports "unknown", which is an honest state (we
+// until then a probe reports "unknown", which is an honest state (we
 // haven't checked yet), not a placeholder value.
 async function unknownAvailability() {
   return 'unknown' as const;
+}
+
+// expo-device fields are always readable (an individual value being null
+// isn't an unsupported state) — the probe itself is always available.
+async function deviceAvailability() {
+  return 'available' as const;
+}
+
+// Core React Native APIs, always available.
+async function displayAvailability() {
+  return 'available' as const;
+}
+
+// Dynamic import on purpose: expo-battery pulls in react-native, whose
+// Flow-typed source `bun test` can't parse. A static top-level import would
+// break every test that merely imports the registry, even ones that never
+// call this function. The dynamic import stays unresolved until a real
+// (Expo/React Native) runtime actually invokes it.
+async function batteryAvailability() {
+  const Battery = await import('expo-battery');
+  const available = await Battery.isAvailableAsync();
+  return available ? ('available' as const) : ('unsupported' as const);
 }
 
 export const probes: ProbeDefinition[] = [
@@ -17,7 +39,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.device.description',
     platforms: ['ios', 'android'],
     icon: 'hardware-chip-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: deviceAvailability,
   },
   {
     id: 'display',
@@ -26,7 +48,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.display.description',
     platforms: ['ios', 'android'],
     icon: 'phone-portrait-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: displayAvailability,
   },
   {
     id: 'battery',
@@ -35,7 +57,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.battery.description',
     platforms: ['ios', 'android'],
     icon: 'battery-half-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: batteryAvailability,
   },
   {
     id: 'network',

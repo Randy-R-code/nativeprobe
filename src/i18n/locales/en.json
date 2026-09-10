@@ -25,18 +25,64 @@
     "unsupported": "Unsupported",
     "unknown": "Unknown"
   },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "notAvailable": "Not available",
+    "portrait": "Portrait",
+    "landscape": "Landscape"
+  },
   "probe": {
     "device": {
       "title": "Device",
-      "description": "Platform, OS version, model, and manufacturer for the current device."
+      "description": "Platform, OS version, model, and manufacturer for the current device.",
+      "field": {
+        "platform": "Platform",
+        "osVersion": "OS version",
+        "model": "Model",
+        "deviceName": "Device name",
+        "manufacturer": "Manufacturer",
+        "deviceType": "Device type",
+        "physicalDevice": "Physical device"
+      },
+      "deviceType": {
+        "phone": "Phone",
+        "tablet": "Tablet",
+        "desktop": "Desktop",
+        "tv": "TV",
+        "unknown": "Unknown"
+      }
     },
     "display": {
       "title": "Display",
-      "description": "Screen dimensions, pixel ratio, orientation, and safe area."
+      "description": "Screen dimensions, pixel ratio, orientation, and safe area.",
+      "field": {
+        "width": "Width (pt)",
+        "height": "Height (pt)",
+        "pixelRatio": "Pixel ratio",
+        "fontScale": "Font scale",
+        "orientation": "Orientation",
+        "safeAreaTop": "Safe area top",
+        "safeAreaBottom": "Safe area bottom",
+        "safeAreaLeft": "Safe area left",
+        "safeAreaRight": "Safe area right"
+      }
     },
     "battery": {
       "title": "Battery",
-      "description": "Battery level, charging state, and low-power mode."
+      "description": "Battery level, charging state, and low-power mode.",
+      "field": {
+        "level": "Battery level",
+        "state": "Charging state",
+        "lowPowerMode": "Low power mode"
+      },
+      "state": {
+        "unknown": "Unknown",
+        "unplugged": "Unplugged",
+        "charging": "Charging",
+        "full": "Full",
+        "notCharging": "Not charging"
+      }
     },
     "network": {
       "title": "Network",

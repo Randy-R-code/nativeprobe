@@ -24,9 +24,13 @@ describe('probe registry', () => {
     expect(probesByCategory('report')).toHaveLength(1);
   });
 
-  test('every probe currently reports "unknown" (no detection logic yet)', async () => {
+  test('every probe declares a getAvailability function', () => {
+    // Not invoked here: several probes call into native modules (expo-battery,
+    // expo-device, ...) that only exist inside the Expo/React Native runtime,
+    // not under `bun test`. Real device behavior belongs to the manual test
+    // matrix (spec §22), not this suite.
     for (const probe of probes) {
-      expect(await probe.getAvailability()).toBe('unknown');
+      expect(typeof probe.getAvailability).toBe('function');
     }
   });
 });
