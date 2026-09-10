@@ -1,0 +1,7 @@
+# Generated/native output — created by `expo prebuild` / `expo run:ios`.
+# Without these ignores, `bun run lint` (prettier -c) fails after any native build.
+.expo/
+ios/
+android/
+dist/
+node_modules/

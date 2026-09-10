@@ -1,0 +1,94 @@
+{
+  "app": {
+    "name": "NativeProbe",
+    "tagline": "Explorez ce que votre appareil sait vraiment faire."
+  },
+  "nav": {
+    "overview": "Aperçu",
+    "report": "Rapport",
+    "about": "À propos"
+  },
+  "overview": {
+    "summary": "{available} sur {total} sondes disponibles",
+    "categories": {
+      "device": "APPAREIL",
+      "sensors": "CAPTEURS",
+      "system": "API SYSTÈME",
+      "report": "RAPPORT"
+    }
+  },
+  "status": {
+    "available": "Disponible",
+    "permission-required": "Permission requise",
+    "denied": "Refusé",
+    "restricted": "Restreint",
+    "unsupported": "Non supporté",
+    "unknown": "Inconnu"
+  },
+  "probe": {
+    "device": {
+      "title": "Appareil",
+      "description": "Plateforme, version OS, modèle et fabricant de l'appareil actuel."
+    },
+    "display": {
+      "title": "Écran",
+      "description": "Dimensions, ratio de pixels, orientation et zone sûre."
+    },
+    "battery": {
+      "title": "Batterie",
+      "description": "Niveau de batterie, état de charge et mode basse consommation."
+    },
+    "network": {
+      "title": "Réseau",
+      "description": "Type de connexion, accessibilité et journal d'événements en direct."
+    },
+    "accelerometer": {
+      "title": "Accéléromètre",
+      "description": "Valeurs X/Y/Z en direct avec contrôles start/stop."
+    },
+    "gyroscope": {
+      "title": "Gyroscope",
+      "description": "Vitesse de rotation X/Y/Z en direct avec contrôles start/stop."
+    },
+    "magnetometer": {
+      "title": "Magnétomètre",
+      "description": "Mesures du champ magnétique X/Y/Z en direct."
+    },
+    "permissions": {
+      "title": "Permissions",
+      "description": "Statut et demande pour chaque permission utilisée par NativeProbe."
+    },
+    "location": {
+      "title": "Localisation",
+      "description": "Position ponctuelle et suivi en direct."
+    },
+    "haptics": {
+      "title": "Retour haptique",
+      "description": "Déclenchez chaque style de retour haptique supporté."
+    },
+    "biometrics": {
+      "title": "Biométrie",
+      "description": "Disponibilité matérielle, enrôlement et test d'authentification."
+    },
+    "deep-links": {
+      "title": "Deep Links",
+      "description": "Inspectez et testez le schéma d'URI de NativeProbe."
+    },
+    "report": {
+      "title": "Rapport de capacités",
+      "description": "Générez et partagez un résumé local de cet appareil."
+    }
+  },
+  "probeDetail": {
+    "notImplemented": "Cette sonde n'est pas encore implémentée.",
+    "builtWith": "Construit avec"
+  },
+  "about": {
+    "title": "À propos de NativeProbe",
+    "body": "NativeProbe est un terrain de jeu React Native open-source pour explorer, tester et comprendre les capacités réelles d'un appareil. Pas de compte. Pas de backend. Vos données restent sur votre appareil, sauf si vous partagez explicitement un rapport généré."
+  },
+  "reportScreen": {
+    "title": "Rapport de capacités",
+    "comingSoon": "La génération de rapport arrive dans un prochain jalon."
+  }
+}

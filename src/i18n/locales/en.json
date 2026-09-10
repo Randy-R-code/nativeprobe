@@ -1,0 +1,94 @@
+{
+  "app": {
+    "name": "NativeProbe",
+    "tagline": "Explore what your device can actually do."
+  },
+  "nav": {
+    "overview": "Overview",
+    "report": "Report",
+    "about": "About"
+  },
+  "overview": {
+    "summary": "{available} of {total} probes available",
+    "categories": {
+      "device": "DEVICE",
+      "sensors": "SENSORS",
+      "system": "SYSTEM APIs",
+      "report": "REPORT"
+    }
+  },
+  "status": {
+    "available": "Available",
+    "permission-required": "Permission required",
+    "denied": "Denied",
+    "restricted": "Restricted",
+    "unsupported": "Unsupported",
+    "unknown": "Unknown"
+  },
+  "probe": {
+    "device": {
+      "title": "Device",
+      "description": "Platform, OS version, model, and manufacturer for the current device."
+    },
+    "display": {
+      "title": "Display",
+      "description": "Screen dimensions, pixel ratio, orientation, and safe area."
+    },
+    "battery": {
+      "title": "Battery",
+      "description": "Battery level, charging state, and low-power mode."
+    },
+    "network": {
+      "title": "Network",
+      "description": "Connection type, reachability, and a live event log."
+    },
+    "accelerometer": {
+      "title": "Accelerometer",
+      "description": "Live X/Y/Z acceleration with start/stop controls."
+    },
+    "gyroscope": {
+      "title": "Gyroscope",
+      "description": "Live X/Y/Z rotation rate with start/stop controls."
+    },
+    "magnetometer": {
+      "title": "Magnetometer",
+      "description": "Live X/Y/Z magnetic field readings."
+    },
+    "permissions": {
+      "title": "Permissions",
+      "description": "Status and request flow for every permission NativeProbe uses."
+    },
+    "location": {
+      "title": "Location",
+      "description": "One-shot position and live tracking."
+    },
+    "haptics": {
+      "title": "Haptics",
+      "description": "Trigger every supported haptic feedback style."
+    },
+    "biometrics": {
+      "title": "Biometrics",
+      "description": "Hardware availability, enrollment, and a test authentication."
+    },
+    "deep-links": {
+      "title": "Deep Links",
+      "description": "Inspect and test NativeProbe's URI scheme."
+    },
+    "report": {
+      "title": "Capability Report",
+      "description": "Generate and share a local summary of this device."
+    }
+  },
+  "probeDetail": {
+    "notImplemented": "This probe isn't implemented yet.",
+    "builtWith": "Built with"
+  },
+  "about": {
+    "title": "About NativeProbe",
+    "body": "NativeProbe is an open-source React Native playground for exploring, testing, and understanding real device capabilities. No account. No backend. Your device data stays on your device unless you explicitly choose to share a generated report."
+  },
+  "reportScreen": {
+    "title": "Capability Report",
+    "comingSoon": "Report generation lands in a later milestone."
+  }
+}
