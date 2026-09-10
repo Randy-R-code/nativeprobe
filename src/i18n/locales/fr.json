@@ -86,7 +86,30 @@
     },
     "network": {
       "title": "Réseau",
-      "description": "Type de connexion, accessibilité et journal d'événements en direct."
+      "description": "Type de connexion, accessibilité et journal d'événements en direct.",
+      "field": {
+        "connected": "Connecté",
+        "type": "Type de réseau",
+        "internetReachable": "Internet accessible",
+        "ipAddress": "Adresse IP"
+      },
+      "type": {
+        "bluetooth": "Bluetooth",
+        "cellular": "Cellulaire",
+        "ethernet": "Ethernet",
+        "none": "Aucun",
+        "other": "Autre",
+        "unknown": "Inconnu",
+        "vpn": "VPN",
+        "wifi": "Wi-Fi",
+        "wimax": "WiMAX"
+      },
+      "log": {
+        "title": "Journal d'événements",
+        "connected": "{type} connecté",
+        "disconnected": "Réseau indisponible",
+        "empty": "Aucun événement pour l'instant."
+      }
     },
     "accelerometer": {
       "title": "Accéléromètre",
@@ -128,6 +151,14 @@
   "probeDetail": {
     "notImplemented": "Cette sonde n'est pas encore implémentée.",
     "builtWith": "Construit avec"
+  },
+  "sensor": {
+    "axisX": "X",
+    "axisY": "Y",
+    "axisZ": "Z",
+    "start": "Démarrer",
+    "stop": "Arrêter",
+    "interval": "Fréquence d'échantillonnage"
   },
   "about": {
     "title": "À propos de NativeProbe",

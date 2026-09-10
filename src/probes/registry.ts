@@ -1,4 +1,4 @@
-import type { ProbeCategory, ProbeDefinition, ProbeId } from './types';
+import type { ProbeAvailability, ProbeCategory, ProbeDefinition, ProbeId } from './types';
 
 // Every V1 probe registers here with its metadata so the Overview screen is
 // generated from data instead of hardcoded repeated UI (spec §7). Real
@@ -29,6 +29,44 @@ async function batteryAvailability() {
   const Battery = await import('expo-battery');
   const available = await Battery.isAvailableAsync();
   return available ? ('available' as const) : ('unsupported' as const);
+}
+
+// Core network status querying needs no permission and always works.
+async function networkAvailability() {
+  return 'available' as const;
+}
+
+type PermissionAwareSensor = {
+  isAvailableAsync: () => Promise<boolean>;
+  getPermissionsAsync?: () => Promise<{
+    granted: boolean;
+    canAskAgain: boolean;
+  }>;
+};
+
+async function vectorSensorAvailability(sensor: PermissionAwareSensor): Promise<ProbeAvailability> {
+  const available = await sensor.isAvailableAsync();
+  if (!available) return 'unsupported';
+  if (sensor.getPermissionsAsync) {
+    const permission = await sensor.getPermissionsAsync();
+    if (!permission.granted) return permission.canAskAgain ? 'permission-required' : 'denied';
+  }
+  return 'available';
+}
+
+async function accelerometerAvailability() {
+  const { Accelerometer } = await import('expo-sensors');
+  return vectorSensorAvailability(Accelerometer);
+}
+
+async function gyroscopeAvailability() {
+  const { Gyroscope } = await import('expo-sensors');
+  return vectorSensorAvailability(Gyroscope);
+}
+
+async function magnetometerAvailability() {
+  const { Magnetometer } = await import('expo-sensors');
+  return vectorSensorAvailability(Magnetometer);
 }
 
 export const probes: ProbeDefinition[] = [
@@ -66,7 +104,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.network.description',
     platforms: ['ios', 'android'],
     icon: 'wifi-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: networkAvailability,
   },
   {
     id: 'accelerometer',
@@ -75,7 +113,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.accelerometer.description',
     platforms: ['ios', 'android'],
     icon: 'speedometer-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: accelerometerAvailability,
   },
   {
     id: 'gyroscope',
@@ -84,7 +122,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.gyroscope.description',
     platforms: ['ios', 'android'],
     icon: 'sync-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: gyroscopeAvailability,
   },
   {
     id: 'magnetometer',
@@ -93,7 +131,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.magnetometer.description',
     platforms: ['ios', 'android'],
     icon: 'compass-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: magnetometerAvailability,
   },
   {
     id: 'permissions',

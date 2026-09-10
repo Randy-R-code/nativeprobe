@@ -1,3 +1,7 @@
+import { Ionicons } from '@expo/vector-icons';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { View } from 'react-native';
 import { Screen } from '@/components/ui/screen';
 import { StatusChip } from '@/components/ui/status-chip';
 import { Text } from '@/components/ui/text';
@@ -6,10 +10,6 @@ import { useTheme } from '@/lib/theme-context';
 import { getProbe } from '@/probes/registry';
 import { probeScreens } from '@/probes/screens';
 import type { ProbeAvailability, ProbeDefinition, ProbeId } from '@/probes/types';
-import { Ionicons } from '@expo/vector-icons';
-import { Stack, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
-import { View } from 'react-native';
 
 function PlaceholderScreen({
   probe,

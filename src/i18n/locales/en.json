@@ -86,7 +86,30 @@
     },
     "network": {
       "title": "Network",
-      "description": "Connection type, reachability, and a live event log."
+      "description": "Connection type, reachability, and a live event log.",
+      "field": {
+        "connected": "Connected",
+        "type": "Network type",
+        "internetReachable": "Internet reachable",
+        "ipAddress": "IP address"
+      },
+      "type": {
+        "bluetooth": "Bluetooth",
+        "cellular": "Cellular",
+        "ethernet": "Ethernet",
+        "none": "None",
+        "other": "Other",
+        "unknown": "Unknown",
+        "vpn": "VPN",
+        "wifi": "Wi-Fi",
+        "wimax": "WiMAX"
+      },
+      "log": {
+        "title": "Event log",
+        "connected": "{type} connected",
+        "disconnected": "Network unavailable",
+        "empty": "No events yet."
+      }
     },
     "accelerometer": {
       "title": "Accelerometer",
@@ -128,6 +151,14 @@
   "probeDetail": {
     "notImplemented": "This probe isn't implemented yet.",
     "builtWith": "Built with"
+  },
+  "sensor": {
+    "axisX": "X",
+    "axisY": "Y",
+    "axisZ": "Z",
+    "start": "Start",
+    "stop": "Stop",
+    "interval": "Sampling interval"
   },
   "about": {
     "title": "About NativeProbe",

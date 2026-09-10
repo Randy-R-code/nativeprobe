@@ -6,19 +6,20 @@
  * Light-theme defaults for the first paint, before ThemeProvider mounts and
  * applies the active scheme via NativeWind `vars()`. Keep these values in
  * sync with the `light` block in `src/lib/theme.ts` (the single source of
- * truth).
+ * truth) — as "R G B" channel numbers, not hex, so Tailwind's opacity
+ * modifiers (`bg-primary/10`) work (see tailwind.config.js).
  */
 :root {
-  --color-background: #ffffff;
-  --color-foreground: #0b0f14;
-  --color-card: #ffffff;
-  --color-card-foreground: #0b0f14;
-  --color-muted: #f1f4f7;
-  --color-muted-foreground: #64748b;
-  --color-border: #e2e8f0;
-  --color-primary: #2563eb;
-  --color-primary-foreground: #ffffff;
-  --color-success: #16a34a;
-  --color-warning: #d97706;
-  --color-destructive: #dc2626;
+  --color-background: 255 255 255;
+  --color-foreground: 11 15 20;
+  --color-card: 255 255 255;
+  --color-card-foreground: 11 15 20;
+  --color-muted: 241 244 247;
+  --color-muted-foreground: 100 116 139;
+  --color-border: 226 232 240;
+  --color-primary: 37 99 235;
+  --color-primary-foreground: 255 255 255;
+  --color-success: 22 163 74;
+  --color-warning: 217 119 6;
+  --color-destructive: 220 38 38;
 }

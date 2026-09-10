@@ -1,9 +1,9 @@
+import { BatteryState, useBatteryLevel, useBatteryState, useLowPowerMode } from 'expo-battery';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { FieldList } from '@/components/ui/field-list';
 import { useT } from '@/i18n';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
-import { BatteryState, useBatteryLevel, useBatteryState, useLowPowerMode } from 'expo-battery';
 
 const batteryStateKey: Record<BatteryState, TranslationKey> = {
   [BatteryState.UNKNOWN]: 'probe.battery.state.unknown',

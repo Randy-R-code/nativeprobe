@@ -62,8 +62,20 @@ export const themes: Record<ColorScheme, ThemeColors> = {
 
 export const themeTokens = Object.keys(themes.light) as (keyof ThemeColors)[];
 
+// Tailwind's opacity modifiers (`bg-primary/10`) only work when a color
+// resolves through `rgb(var(--x) / <alpha-value>)`, which needs the CSS
+// variable to hold "R G B" channel numbers, not a hex string — hence the
+// conversion here instead of just forwarding the hex values.
+function hexToRgbChannels(hex: string): string {
+  const value = hex.replace('#', '');
+  const r = Number.parseInt(value.slice(0, 2), 16);
+  const g = Number.parseInt(value.slice(2, 4), 16);
+  const b = Number.parseInt(value.slice(4, 6), 16);
+  return `${r} ${g} ${b}`;
+}
+
 /**
- * Build the NativeWind `vars()` payload for a scheme: `{ '--color-background': '#…' }`.
+ * Build the NativeWind `vars()` payload for a scheme: `{ '--color-background': '255 255 255' }`.
  * Applied on a wrapping View, it reskins every `var(--color-*)` Tailwind token above.
  * Keep these keys in sync with `tailwind.config.js` and the `:root` block in `global.css`.
  */
@@ -71,7 +83,7 @@ export function toCssVars(scheme: ColorScheme): Record<string, string> {
   const palette = themes[scheme];
   const out: Record<string, string> = {};
   for (const token of themeTokens) {
-    out[`--color-${token}`] = palette[token];
+    out[`--color-${token}`] = hexToRgbChannels(palette[token]);
   }
   return out;
 }
