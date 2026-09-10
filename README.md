@@ -1,4 +1,7 @@
-# NativeProbe
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/images/lockup-horizontal-dark-bg.png">
+  <img src=".github/images/lockup-horizontal-light-bg.png" alt="NativeProbe" width="420">
+</picture>
 
 > Explore what your device can actually do.
 

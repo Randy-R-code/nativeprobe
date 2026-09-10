@@ -26,5 +26,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   silent no-ops.
 - README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue/PR templates, and
   a Bun-based GitHub Actions CI workflow (typecheck, lint, test).
+- iOS bundle identifier and Android package (`com.randycode.nativeprobe`).
+- App icon, Android adaptive icon (foreground/background/monochrome), and a
+  matching splash screen.
+- A README banner with a theme-aware wordmark.
+
+### Fixed
+
+- Missing `expo-font` peer dependency, duplicate native module installs, and
+  a `@types/jest` version mismatch flagged by `expo-doctor`.
 
 [0.1.0]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.0

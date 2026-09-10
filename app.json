@@ -14,7 +14,7 @@
     "android": {
       "package": "com.randycode.nativeprobe",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#05080B",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -39,7 +39,16 @@
           "faceIDPermission": "NativeProbe uses Face ID only to demonstrate the Biometrics probe on this screen."
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 144,
+          "resizeMode": "contain",
+          "backgroundColor": "#05080B"
+        }
+      ]
     ]
   }
 }
