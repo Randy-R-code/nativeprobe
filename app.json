@@ -38,7 +38,8 @@
         {
           "faceIDPermission": "NativeProbe uses Face ID only to demonstrate the Biometrics probe on this screen."
         }
-      ]
+      ],
+      "expo-font"
     ]
   }
 }
