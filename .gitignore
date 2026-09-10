@@ -30,6 +30,9 @@ yarn-error.*
 .DS_Store
 *.pem
 
+# local-only Claude skills (adapted from a private boilerplate, not for the OSS repo)
+/.claude/skills/
+
 # local env files
 .env*.local
 
