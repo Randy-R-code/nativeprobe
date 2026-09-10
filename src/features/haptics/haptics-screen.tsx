@@ -2,7 +2,7 @@ import * as Haptics from 'expo-haptics';
 import { View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 
 export type HapticsScreenProps = {

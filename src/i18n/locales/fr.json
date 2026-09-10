@@ -45,7 +45,7 @@
         "deviceType": "Type d'appareil",
         "physicalDevice": "Appareil physique"
       },
-      "deviceType": {
+      "type": {
         "phone": "Téléphone",
         "tablet": "Tablette",
         "desktop": "Ordinateur",
@@ -135,8 +135,10 @@
         "denied": "Refusée",
         "undetermined": "Non déterminée"
       },
-      "request": "Demander",
-      "openSettings": "Ouvrir les réglages"
+      "action": {
+        "request": "Demander",
+        "openSettings": "Ouvrir les réglages"
+      }
     },
     "location": {
       "title": "Localisation",

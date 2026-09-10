@@ -5,7 +5,7 @@ import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { FieldList } from '@/components/ui/field-list';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
 

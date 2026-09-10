@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { FieldList } from '@/components/ui/field-list';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 

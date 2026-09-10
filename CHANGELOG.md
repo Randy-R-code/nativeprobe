@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this project are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2026-09-10
+
+### Added
+
+- Initial release: 13 interactive probes across device info, live sensors,
+  and system APIs — Device, Display, Battery, Network, Accelerometer,
+  Gyroscope, Magnetometer, Permissions, Location, Haptics, Biometrics, and
+  Deep Links.
+- A typed probe registry driving the Overview screen and its "N of 13
+  probes available" summary from each probe's live availability check.
+- A local Capability Report with copy-JSON and share actions, excluding
+  precise location, contacts, clipboard content, and tracking identifiers
+  by default.
+- English and French localization with device-locale detection and an
+  English fallback.
+- Light and dark mode, following the system by default.
+- Accessibility labels/roles on every interactive control, and explicit
+  error states for permission, network, and location failures instead of
+  silent no-ops.
+- README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue/PR templates, and
+  a Bun-based GitHub Actions CI workflow (typecheck, lint, test).
+
+[0.1.0]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.0

@@ -2,16 +2,16 @@ import * as Device from 'expo-device';
 import { useEffect, useState } from 'react';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { FieldList } from '@/components/ui/field-list';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
 
 const deviceTypeKey: Record<Device.DeviceType, TranslationKey> = {
-  [Device.DeviceType.PHONE]: 'probe.device.deviceType.phone',
-  [Device.DeviceType.TABLET]: 'probe.device.deviceType.tablet',
-  [Device.DeviceType.DESKTOP]: 'probe.device.deviceType.desktop',
-  [Device.DeviceType.TV]: 'probe.device.deviceType.tv',
-  [Device.DeviceType.UNKNOWN]: 'probe.device.deviceType.unknown',
+  [Device.DeviceType.PHONE]: 'probe.device.type.phone',
+  [Device.DeviceType.TABLET]: 'probe.device.type.tablet',
+  [Device.DeviceType.DESKTOP]: 'probe.device.type.desktop',
+  [Device.DeviceType.TV]: 'probe.device.type.tv',
+  [Device.DeviceType.UNKNOWN]: 'probe.device.type.unknown',
 };
 
 export type DeviceScreenProps = {

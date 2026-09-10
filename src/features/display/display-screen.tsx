@@ -2,7 +2,7 @@ import { useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { FieldList } from '@/components/ui/field-list';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 
 export type DisplayScreenProps = {

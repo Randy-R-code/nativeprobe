@@ -6,9 +6,10 @@ import { Card } from '@/components/ui/card';
 import { FieldList } from '@/components/ui/field-list';
 import { Separator } from '@/components/ui/separator';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
+import { describeNetworkEvent } from './describe-network-event';
 
 const MAX_LOG_ENTRIES = 20;
 
@@ -54,11 +55,11 @@ export function NetworkScreen({ probe, status }: NetworkScreenProps) {
       .catch(() => {});
 
     const describe = (next: Network.NetworkState) =>
-      next.isConnected
-        ? t('probe.network.log.connected', {
-            type: t(networkTypeKey[next.type ?? Network.NetworkStateType.UNKNOWN]),
-          })
-        : t('probe.network.log.disconnected');
+      describeNetworkEvent(
+        next.isConnected ?? false,
+        t(networkTypeKey[next.type ?? Network.NetworkStateType.UNKNOWN]),
+        t
+      );
 
     const subscription = Network.addNetworkStateListener((next) => {
       setState(next);

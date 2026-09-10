@@ -45,7 +45,7 @@
         "deviceType": "Device type",
         "physicalDevice": "Physical device"
       },
-      "deviceType": {
+      "type": {
         "phone": "Phone",
         "tablet": "Tablet",
         "desktop": "Desktop",
@@ -135,8 +135,10 @@
         "denied": "Denied",
         "undetermined": "Not determined"
       },
-      "request": "Request",
-      "openSettings": "Open settings"
+      "action": {
+        "request": "Request",
+        "openSettings": "Open settings"
+      }
     },
     "location": {
       "title": "Location",

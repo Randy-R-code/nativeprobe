@@ -4,7 +4,7 @@ import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
 
@@ -90,13 +90,13 @@ function PermissionCard({ descriptor }: { descriptor: PermissionDescriptor }) {
         <View className="mt-3 flex-row">
           {response.canAskAgain ? (
             <Button
-              label={t('probe.permissions.request')}
+              label={t('probe.permissions.action.request')}
               variant="secondary"
               onPress={handleRequest}
             />
           ) : (
             <Button
-              label={t('probe.permissions.openSettings')}
+              label={t('probe.permissions.action.openSettings')}
               variant="secondary"
               onPress={() => Linking.openSettings()}
             />

@@ -6,7 +6,7 @@ import { Screen } from '@/components/ui/screen';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Separator } from '@/components/ui/separator';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import { probeCategories, probes, probesByCategory } from '@/probes/registry';
 import type { ProbeCategory } from '@/probes/types';

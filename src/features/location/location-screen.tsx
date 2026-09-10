@@ -5,8 +5,9 @@ import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { FieldList } from '@/components/ui/field-list';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import { formatCoordinate } from './format-coordinate';
 
 export type LocationScreenProps = {
   probe: ProbeDefinition;
@@ -74,7 +75,7 @@ export function LocationScreen({ probe, status }: LocationScreenProps) {
 
   const notAvailable = t('common.notAvailable');
   const format = (value: number | null | undefined, digits = 5) =>
-    value == null ? notAvailable : value.toFixed(digits);
+    formatCoordinate(value, notAvailable, digits);
 
   return (
     <ProbeScreenShell probe={probe} status={status} builtWith="expo-location">

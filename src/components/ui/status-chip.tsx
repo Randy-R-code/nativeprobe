@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { View } from 'react-native';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import { cn } from '@/lib/cn';
 import { cva, type VariantProps } from '@/lib/cva';
 import type { ThemeColors } from '@/lib/theme';

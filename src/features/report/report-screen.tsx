@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Screen } from '@/components/ui/screen';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import { buildCapabilityReport } from './build-report';
 import { type CapabilityReportV1, serializeReport } from './report-types';
 

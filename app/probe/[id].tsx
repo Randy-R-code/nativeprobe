@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import { Screen } from '@/components/ui/screen';
 import { StatusChip } from '@/components/ui/status-chip';
 import { Text } from '@/components/ui/text';
-import { useT } from '@/i18n';
+import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import { getProbe } from '@/probes/registry';
 import { probeScreens } from '@/probes/screens';
