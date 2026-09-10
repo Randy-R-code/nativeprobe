@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "nativeprobe",
+    "name": "NativeProbe",
     "slug": "nativeprobe",
     "version": "0.1.0",
     "orientation": "portrait",
@@ -8,9 +8,11 @@
     "scheme": "nativeprobe",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.randycode.nativeprobe"
     },
     "android": {
+      "package": "com.randycode.nativeprobe",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
