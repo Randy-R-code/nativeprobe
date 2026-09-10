@@ -1,6 +1,6 @@
-import { Magnetometer } from 'expo-sensors';
 import { VectorSensorScreen } from '@/features/sensors/vector-sensor-screen';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import { Magnetometer } from 'expo-sensors';
 
 export type MagnetometerScreenProps = {
   probe: ProbeDefinition;

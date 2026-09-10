@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import { useState } from 'react';
+import { View } from 'react-native';
 import { IntervalPicker } from './interval-picker';
 import { useVectorSensor, type VectorSensorModule } from './use-vector-sensor';
 import { VectorBars } from './vector-bars';

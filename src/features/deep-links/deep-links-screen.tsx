@@ -1,6 +1,3 @@
-import * as Linking from 'expo-linking';
-import { useEffect, useState } from 'react';
-import { TextInput, View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -9,6 +6,9 @@ import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import * as Linking from 'expo-linking';
+import { useEffect, useState } from 'react';
+import { TextInput, View } from 'react-native';
 
 export type DeepLinksScreenProps = {
   probe: ProbeDefinition;

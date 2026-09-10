@@ -1,12 +1,12 @@
-import * as Location from 'expo-location';
-import { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { FieldList } from '@/components/ui/field-list';
 import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import * as Location from 'expo-location';
+import { useEffect, useRef, useState } from 'react';
+import { View } from 'react-native';
 import { formatCoordinate } from './format-coordinate';
 
 export type LocationScreenProps = {

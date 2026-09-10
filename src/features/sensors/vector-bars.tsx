@@ -1,6 +1,6 @@
-import { View } from 'react-native';
 import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
+import { View } from 'react-native';
 import type { ThreeAxisMeasurement } from './use-vector-sensor';
 
 export type VectorBarsProps = {

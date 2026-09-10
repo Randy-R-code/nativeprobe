@@ -1,6 +1,6 @@
-import { Pressable, View } from 'react-native';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/cn';
+import { Pressable, View } from 'react-native';
 
 export type IntervalPickerProps = {
   value: number;

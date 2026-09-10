@@ -1,8 +1,8 @@
+import { I18nProvider } from '@/i18n/i18n-provider';
+import { ThemeProvider } from '@/lib/theme-context';
 import { render, type RenderOptions } from '@testing-library/react-native';
 import type { ReactElement } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { I18nProvider } from '@/i18n/i18n-provider';
-import { ThemeProvider } from '@/lib/theme-context';
 
 // SafeAreaProvider only measures real insets after a native layout event,
 // which never fires under the test renderer — without `initialMetrics` it

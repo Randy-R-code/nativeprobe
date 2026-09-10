@@ -1,6 +1,6 @@
-import { Pressable, type PressableProps } from 'react-native';
 import { cn } from '@/lib/cn';
 import { cva, type VariantProps } from '@/lib/cva';
+import { Pressable, type PressableProps } from 'react-native';
 import { Text } from './text';
 
 const buttonVariants = cva('items-center justify-center rounded-xl px-4 py-3 active:opacity-70', {

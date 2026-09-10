@@ -1,10 +1,10 @@
-import * as Device from 'expo-device';
-import { useEffect, useState } from 'react';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { FieldList } from '@/components/ui/field-list';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
+import * as Device from 'expo-device';
+import { useEffect, useState } from 'react';
 
 const deviceTypeKey: Record<Device.DeviceType, TranslationKey> = {
   [Device.DeviceType.PHONE]: 'probe.device.type.phone',

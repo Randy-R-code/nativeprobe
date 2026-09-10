@@ -1,6 +1,3 @@
-import { Ionicons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
-import { Pressable, View } from 'react-native';
 import { Card } from '@/components/ui/card';
 import { Screen } from '@/components/ui/screen';
 import { SectionLabel } from '@/components/ui/section-label';
@@ -11,6 +8,9 @@ import { useTheme } from '@/lib/theme-context';
 import { probeCategories, probes, probesByCategory } from '@/probes/registry';
 import type { ProbeCategory } from '@/probes/types';
 import { useProbeStatuses } from '@/probes/use-probe-statuses';
+import { Ionicons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
+import { Pressable, View } from 'react-native';
 import { ProbeRow } from './probe-row';
 
 const categoryLabelKey: Record<ProbeCategory, `overview.categories.${ProbeCategory}`> = {

@@ -1,6 +1,3 @@
-import * as Network from 'expo-network';
-import { useEffect, useState } from 'react';
-import { View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Card } from '@/components/ui/card';
 import { FieldList } from '@/components/ui/field-list';
@@ -9,6 +6,9 @@ import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
+import * as Network from 'expo-network';
+import { useEffect, useState } from 'react';
+import { View } from 'react-native';
 import { describeNetworkEvent } from './describe-network-event';
 
 const MAX_LOG_ENTRIES = 20;

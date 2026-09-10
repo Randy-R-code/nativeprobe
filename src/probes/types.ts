@@ -1,5 +1,5 @@
-import type { Ionicons } from '@expo/vector-icons';
 import type { TranslationKey } from '@/types/i18n';
+import type { Ionicons } from '@expo/vector-icons';
 
 export type ProbeAvailability =
   'available' | 'permission-required' | 'denied' | 'restricted' | 'unsupported' | 'unknown';

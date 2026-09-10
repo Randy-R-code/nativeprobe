@@ -1,6 +1,3 @@
-import * as LocalAuthentication from 'expo-local-authentication';
-import { useEffect, useState } from 'react';
-import { View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { FieldList } from '@/components/ui/field-list';
@@ -8,6 +5,9 @@ import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
+import * as LocalAuthentication from 'expo-local-authentication';
+import { useEffect, useState } from 'react';
+import { View } from 'react-native';
 
 const typeKey: Record<LocalAuthentication.AuthenticationType, TranslationKey> = {
   [LocalAuthentication.AuthenticationType.FINGERPRINT]: 'probe.biometrics.type.fingerprint',

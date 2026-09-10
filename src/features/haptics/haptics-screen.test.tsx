@@ -1,6 +1,6 @@
-import * as Haptics from 'expo-haptics';
 import { getProbe } from '@/probes/registry';
 import { fireEvent, renderWithProviders } from '@/test-utils/render';
+import * as Haptics from 'expo-haptics';
 import { HapticsScreen } from './haptics-screen';
 
 const probe = getProbe('haptics');

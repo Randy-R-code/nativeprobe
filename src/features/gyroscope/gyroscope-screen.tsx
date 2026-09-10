@@ -1,6 +1,6 @@
-import { Gyroscope } from 'expo-sensors';
 import { VectorSensorScreen } from '@/features/sensors/vector-sensor-screen';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import { Gyroscope } from 'expo-sensors';
 
 export type GyroscopeScreenProps = {
   probe: ProbeDefinition;

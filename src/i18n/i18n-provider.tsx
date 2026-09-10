@@ -1,6 +1,6 @@
+import type { TranslationKey } from '@/types/i18n';
 import * as Localization from 'expo-localization';
 import { createContext, type ReactNode, useContext, useMemo } from 'react';
-import type { TranslationKey } from '@/types/i18n';
 import en from './locales/en.json';
 import fr from './locales/fr.json';
 import { interpolate, resolve } from './resolve';

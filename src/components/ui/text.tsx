@@ -1,6 +1,6 @@
-import { Text as RNText, type TextProps as RNTextProps } from 'react-native';
 import { cn } from '@/lib/cn';
 import { cva, type VariantProps } from '@/lib/cva';
+import { Text as RNText, type TextProps as RNTextProps } from 'react-native';
 
 const textVariants = cva('text-foreground', {
   variants: {

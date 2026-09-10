@@ -1,11 +1,11 @@
-import { Ionicons } from '@expo/vector-icons';
-import { type Href, Link } from 'expo-router';
-import { Pressable, View } from 'react-native';
 import { StatusChip } from '@/components/ui/status-chip';
 import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import { Ionicons } from '@expo/vector-icons';
+import { type Href, Link } from 'expo-router';
+import { Pressable, View } from 'react-native';
 
 export type ProbeRowProps = {
   probe: ProbeDefinition;

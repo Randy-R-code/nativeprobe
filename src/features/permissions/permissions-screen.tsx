@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { Linking, View } from 'react-native';
 import { ProbeScreenShell } from '@/components/probe/probe-screen-shell';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -7,6 +5,8 @@ import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
 import type { TranslationKey } from '@/types/i18n';
+import { useEffect, useState } from 'react';
+import { Linking, View } from 'react-native';
 
 type PermissionStatus = 'granted' | 'denied' | 'undetermined';
 

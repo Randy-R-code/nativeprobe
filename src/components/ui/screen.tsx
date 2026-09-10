@@ -1,6 +1,6 @@
+import { cn } from '@/lib/cn';
 import { ScrollView, View, type ViewProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { cn } from '@/lib/cn';
 
 export type ScreenProps = ViewProps & {
   className?: string;
