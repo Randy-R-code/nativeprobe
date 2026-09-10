@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import { themes, themeTokens, toCssVars } from './theme';
 
 describe('theme tokens', () => {

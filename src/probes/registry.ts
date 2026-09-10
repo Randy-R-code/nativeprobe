@@ -1,3 +1,7 @@
+import * as Battery from 'expo-battery';
+import * as LocalAuthentication from 'expo-local-authentication';
+import * as Location from 'expo-location';
+import { Accelerometer, Gyroscope, Magnetometer } from 'expo-sensors';
 import type { ProbeAvailability, ProbeCategory, ProbeDefinition, ProbeId } from './types';
 
 // Every V1 probe registers here with its metadata so the Overview screen is
@@ -14,13 +18,7 @@ async function displayAvailability() {
   return 'available' as const;
 }
 
-// Dynamic import on purpose: expo-battery pulls in react-native, whose
-// Flow-typed source `bun test` can't parse. A static top-level import would
-// break every test that merely imports the registry, even ones that never
-// call this function. The dynamic import stays unresolved until a real
-// (Expo/React Native) runtime actually invokes it.
 async function batteryAvailability() {
-  const Battery = await import('expo-battery');
   const available = await Battery.isAvailableAsync();
   return available ? ('available' as const) : ('unsupported' as const);
 }
@@ -49,17 +47,14 @@ async function vectorSensorAvailability(sensor: PermissionAwareSensor): Promise<
 }
 
 async function accelerometerAvailability() {
-  const { Accelerometer } = await import('expo-sensors');
   return vectorSensorAvailability(Accelerometer);
 }
 
 async function gyroscopeAvailability() {
-  const { Gyroscope } = await import('expo-sensors');
   return vectorSensorAvailability(Gyroscope);
 }
 
 async function magnetometerAvailability() {
-  const { Magnetometer } = await import('expo-sensors');
   return vectorSensorAvailability(Magnetometer);
 }
 
@@ -69,7 +64,6 @@ async function permissionsAvailability() {
 }
 
 async function locationAvailability(): Promise<ProbeAvailability> {
-  const Location = await import('expo-location');
   const permission = await Location.getForegroundPermissionsAsync();
   if (permission.granted) return 'available';
   return permission.canAskAgain ? 'permission-required' : 'denied';
@@ -82,7 +76,6 @@ async function hapticsAvailability() {
 }
 
 async function biometricsAvailability(): Promise<ProbeAvailability> {
-  const LocalAuthentication = await import('expo-local-authentication');
   const hasHardware = await LocalAuthentication.hasHardwareAsync();
   return hasHardware ? 'available' : 'unsupported';
 }

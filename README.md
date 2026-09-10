@@ -51,7 +51,7 @@ Other scripts:
 bun run lint       # eslint + prettier -c
 bun run format     # eslint --fix + prettier --write
 bun run typecheck  # tsc --noEmit
-bun run test       # bun test
+bun run test       # jest + jest-expo + react native testing library
 ```
 
 ### Development build requirements

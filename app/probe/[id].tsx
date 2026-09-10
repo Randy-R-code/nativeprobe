@@ -49,9 +49,14 @@ export default function ProbeDetailScreen() {
   useEffect(() => {
     if (!probe) return;
     let cancelled = false;
-    probe.getAvailability().then((next) => {
-      if (!cancelled) setStatus(next);
-    });
+    probe
+      .getAvailability()
+      .then((next) => {
+        if (!cancelled) setStatus(next);
+      })
+      .catch(() => {
+        if (!cancelled) setStatus('unknown');
+      });
     return () => {
       cancelled = true;
     };

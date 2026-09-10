@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import { formatCoordinate } from './format-coordinate';
 
 describe('formatCoordinate', () => {

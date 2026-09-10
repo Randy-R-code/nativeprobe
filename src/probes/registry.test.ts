@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import { probeCategories, probes, probesByCategory } from './registry';
 
 describe('probe registry', () => {

@@ -21,7 +21,7 @@ opening a PR.
 ```bash
 bun run lint       # eslint + prettier -c
 bun run typecheck  # tsc --noEmit
-bun run test       # bun test
+bun run test       # jest + jest-expo + react native testing library
 ```
 
 All three must pass. CI runs the same checks.
@@ -53,11 +53,9 @@ A probe is three pieces wired together:
    `icon` (any [Ionicons](https://icons.expo.fyi) name), and a
    `getAvailability()` function returning a `ProbeAvailability`
    (`"available" | "permission-required" | "denied" | "restricted" |
-"unsupported" | "unknown"`). If the check touches a native module, use a
-   dynamic `import()` inside the function — a static top-level import of
-   most Expo packages pulls in React Native's Flow-typed source, which
-   `bun test` can't parse, and would break every test that merely imports
-   the registry.
+"unsupported" | "unknown"`). A normal top-level import of the Expo module
+   it needs is fine — Jest (via `jest-expo`) parses React Native's source
+   without issue.
 2. **Translations** — add `probe.<id>.title` / `probe.<id>.description` (and
    any field labels the screen needs) to **both**
    `src/i18n/locales/en.json` and `src/i18n/locales/fr.json`. English is the
@@ -72,6 +70,13 @@ A probe is three pieces wired together:
 
 That's it — the Overview screen, routing, and status counting all pick up
 the new probe automatically from the registry.
+
+Add a `<id>-screen.test.tsx` alongside the screen using
+`renderWithProviders` from `src/test-utils/render.tsx` — see
+`src/features/haptics/haptics-screen.test.tsx` for a screen with button
+interactions, or `src/features/overview/overview-screen.test.tsx` for a
+plain render assertion. Mock the native module's specific function with
+`jest.spyOn` rather than mocking the whole package.
 
 ## Reporting a security issue
 

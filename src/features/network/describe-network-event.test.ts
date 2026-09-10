@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import { describeNetworkEvent, type Translate } from './describe-network-event';
 
 const fakeT: Translate = (key, vars) => {

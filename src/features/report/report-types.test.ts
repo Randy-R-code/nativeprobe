@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import {
   type CapabilityReportV1,
   FORBIDDEN_REPORT_SUBSTRINGS,

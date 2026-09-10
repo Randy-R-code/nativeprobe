@@ -1,4 +1,3 @@
-import { describe, expect, test } from 'bun:test';
 import en from './locales/en.json';
 import fr from './locales/fr.json';
 import { interpolate, resolve } from './resolve';

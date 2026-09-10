@@ -1,11 +1,12 @@
 # Manual Test Matrix
 
-Automated tests (`bun test`) only cover pure logic — the probe registry
-shape, i18n key resolution, theme token conversion, and report
-serialization. They deliberately don't touch native modules (see the
-comments in `src/probes/registry.ts` and `src/features/report/build-report.ts`
-for why). Every probe that reads real hardware/OS state needs to be
-verified by hand before a release.
+Automated tests (`bun run test`, Jest + jest-expo + React Native Testing
+Library) cover pure logic (probe registry shape, i18n key resolution, theme
+token conversion, report serialization) and component rendering/interaction
+against jest-expo's mocked native modules. What they can't cover is real
+hardware/OS behavior — an actual sensor reading, a real permission dialog,
+physical haptic feedback, GPS accuracy. Every probe needs to be verified by
+hand on a real device before a release.
 
 **Status: not yet run.** This table is the checklist to fill in — replace
 "Not yet tested" with a date, build (Expo Go / dev build), and pass/fail per
