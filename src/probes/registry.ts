@@ -1,13 +1,7 @@
 import type { ProbeAvailability, ProbeCategory, ProbeDefinition, ProbeId } from './types';
 
 // Every V1 probe registers here with its metadata so the Overview screen is
-// generated from data instead of hardcoded repeated UI (spec §7). Real
-// `getAvailability` detection logic lands per-probe in later milestones —
-// until then a probe reports "unknown", which is an honest state (we
-// haven't checked yet), not a placeholder value.
-async function unknownAvailability() {
-  return 'unknown' as const;
-}
+// generated from data instead of hardcoded repeated UI (spec §7).
 
 // expo-device fields are always readable (an individual value being null
 // isn't an unsupported state) — the probe itself is always available.
@@ -95,6 +89,12 @@ async function biometricsAvailability(): Promise<ProbeAvailability> {
 
 // URL-scheme handling is always available as a capability.
 async function deepLinksAvailability() {
+  return 'available' as const;
+}
+
+// Report generation itself needs no capability check — it only reads other
+// probes' already-computed availability.
+async function reportAvailability() {
   return 'available' as const;
 }
 
@@ -214,7 +214,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.report.description',
     platforms: ['ios', 'android'],
     icon: 'document-text-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: reportAvailability,
   },
 ];
 

@@ -235,6 +235,10 @@
   },
   "reportScreen": {
     "title": "Capability Report",
-    "comingSoon": "Report generation lands in a later milestone."
+    "privacyNote": "This report only includes capability availability (e.g. \"available\", \"permission required\") — never precise location, contacts, clipboard content, or tracking identifiers.",
+    "building": "Building report…",
+    "copy": "Copy JSON",
+    "copied": "Copied!",
+    "share": "Share"
   }
 }

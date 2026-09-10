@@ -235,6 +235,10 @@
   },
   "reportScreen": {
     "title": "Rapport de capacités",
-    "comingSoon": "La génération de rapport arrive dans un prochain jalon."
+    "privacyNote": "Ce rapport contient uniquement la disponibilité des capacités (ex. « disponible », « permission requise ») — jamais de position précise, de contacts, de contenu du presse-papiers ou d'identifiants de suivi.",
+    "building": "Génération du rapport…",
+    "copy": "Copier le JSON",
+    "copied": "Copié !",
+    "share": "Partager"
   }
 }
