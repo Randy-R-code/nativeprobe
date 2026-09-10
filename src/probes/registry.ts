@@ -69,6 +69,35 @@ async function magnetometerAvailability() {
   return vectorSensorAvailability(Magnetometer);
 }
 
+// The permission explorer itself needs no permission — it only reads status.
+async function permissionsAvailability() {
+  return 'available' as const;
+}
+
+async function locationAvailability(): Promise<ProbeAvailability> {
+  const Location = await import('expo-location');
+  const permission = await Location.getForegroundPermissionsAsync();
+  if (permission.granted) return 'available';
+  return permission.canAskAgain ? 'permission-required' : 'denied';
+}
+
+// Haptics degrade gracefully (silent no-op) on unsupported hardware, no
+// permission or hardware check to gate the probe itself on.
+async function hapticsAvailability() {
+  return 'available' as const;
+}
+
+async function biometricsAvailability(): Promise<ProbeAvailability> {
+  const LocalAuthentication = await import('expo-local-authentication');
+  const hasHardware = await LocalAuthentication.hasHardwareAsync();
+  return hasHardware ? 'available' : 'unsupported';
+}
+
+// URL-scheme handling is always available as a capability.
+async function deepLinksAvailability() {
+  return 'available' as const;
+}
+
 export const probes: ProbeDefinition[] = [
   {
     id: 'device',
@@ -140,7 +169,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.permissions.description',
     platforms: ['ios', 'android'],
     icon: 'key-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: permissionsAvailability,
   },
   {
     id: 'location',
@@ -149,7 +178,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.location.description',
     platforms: ['ios', 'android'],
     icon: 'location-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: locationAvailability,
   },
   {
     id: 'haptics',
@@ -158,7 +187,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.haptics.description',
     platforms: ['ios', 'android'],
     icon: 'pulse-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: hapticsAvailability,
   },
   {
     id: 'biometrics',
@@ -167,7 +196,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.biometrics.description',
     platforms: ['ios', 'android'],
     icon: 'finger-print-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: biometricsAvailability,
   },
   {
     id: 'deep-links',
@@ -176,7 +205,7 @@ export const probes: ProbeDefinition[] = [
     descriptionKey: 'probe.deep-links.description',
     platforms: ['ios', 'android'],
     icon: 'link-outline',
-    getAvailability: unknownAvailability,
+    getAvailability: deepLinksAvailability,
   },
   {
     id: 'report',

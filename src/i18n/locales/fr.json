@@ -125,23 +125,92 @@
     },
     "permissions": {
       "title": "Permissions",
-      "description": "Statut et demande pour chaque permission utilisée par NativeProbe."
+      "description": "Statut et demande pour chaque permission utilisée par NativeProbe.",
+      "item": {
+        "location": "Localisation",
+        "motion": "Mouvement et forme"
+      },
+      "status": {
+        "granted": "Accordée",
+        "denied": "Refusée",
+        "undetermined": "Non déterminée"
+      },
+      "request": "Demander",
+      "openSettings": "Ouvrir les réglages"
     },
     "location": {
       "title": "Localisation",
-      "description": "Position ponctuelle et suivi en direct."
+      "description": "Position ponctuelle et suivi en direct.",
+      "field": {
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "accuracy": "Précision (m)",
+        "altitude": "Altitude (m)",
+        "heading": "Cap (°)",
+        "speed": "Vitesse (m/s)"
+      },
+      "action": {
+        "getCurrent": "Obtenir la position actuelle",
+        "startTracking": "Démarrer le suivi",
+        "stopTracking": "Arrêter le suivi"
+      },
+      "noPosition": "Aucune position pour l'instant."
     },
     "haptics": {
       "title": "Retour haptique",
-      "description": "Déclenchez chaque style de retour haptique supporté."
+      "description": "Déclenchez chaque style de retour haptique supporté.",
+      "style": {
+        "light": "Impact léger",
+        "medium": "Impact moyen",
+        "heavy": "Impact fort",
+        "success": "Succès",
+        "warning": "Avertissement",
+        "error": "Erreur",
+        "selection": "Sélection"
+      }
     },
     "biometrics": {
       "title": "Biométrie",
-      "description": "Disponibilité matérielle, enrôlement et test d'authentification."
+      "description": "Disponibilité matérielle, enrôlement et test d'authentification.",
+      "field": {
+        "hardware": "Matériel disponible",
+        "enrolled": "Enrôlé",
+        "types": "Types supportés"
+      },
+      "type": {
+        "fingerprint": "Empreinte digitale",
+        "facial": "Reconnaissance faciale",
+        "iris": "Iris"
+      },
+      "none": "Aucun",
+      "action": {
+        "test": "Tester l'authentification"
+      },
+      "result": {
+        "success": "Authentification réussie.",
+        "failed": "Échec de l'authentification : {error}"
+      }
     },
     "deep-links": {
       "title": "Deep Links",
-      "description": "Inspectez et testez le schéma d'URI de NativeProbe."
+      "description": "Inspectez et testez le schéma d'URI de NativeProbe.",
+      "field": {
+        "scheme": "Schéma configuré",
+        "incomingUrl": "Dernière URL entrante"
+      },
+      "placeholder": "nativeprobe://probe/battery",
+      "action": {
+        "validate": "Valider",
+        "open": "Ouvrir"
+      },
+      "parsed": {
+        "title": "URI analysée",
+        "scheme": "Schéma",
+        "hostname": "Hôte",
+        "path": "Chemin",
+        "queryParams": "Paramètres"
+      },
+      "none": "Aucune pour l'instant."
     },
     "report": {
       "title": "Rapport de capacités",

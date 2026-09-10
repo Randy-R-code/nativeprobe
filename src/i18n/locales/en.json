@@ -125,23 +125,92 @@
     },
     "permissions": {
       "title": "Permissions",
-      "description": "Status and request flow for every permission NativeProbe uses."
+      "description": "Status and request flow for every permission NativeProbe uses.",
+      "item": {
+        "location": "Location",
+        "motion": "Motion & Fitness"
+      },
+      "status": {
+        "granted": "Granted",
+        "denied": "Denied",
+        "undetermined": "Not determined"
+      },
+      "request": "Request",
+      "openSettings": "Open settings"
     },
     "location": {
       "title": "Location",
-      "description": "One-shot position and live tracking."
+      "description": "One-shot position and live tracking.",
+      "field": {
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "accuracy": "Accuracy (m)",
+        "altitude": "Altitude (m)",
+        "heading": "Heading (°)",
+        "speed": "Speed (m/s)"
+      },
+      "action": {
+        "getCurrent": "Get current position",
+        "startTracking": "Start tracking",
+        "stopTracking": "Stop tracking"
+      },
+      "noPosition": "No position yet."
     },
     "haptics": {
       "title": "Haptics",
-      "description": "Trigger every supported haptic feedback style."
+      "description": "Trigger every supported haptic feedback style.",
+      "style": {
+        "light": "Light impact",
+        "medium": "Medium impact",
+        "heavy": "Heavy impact",
+        "success": "Success",
+        "warning": "Warning",
+        "error": "Error",
+        "selection": "Selection"
+      }
     },
     "biometrics": {
       "title": "Biometrics",
-      "description": "Hardware availability, enrollment, and a test authentication."
+      "description": "Hardware availability, enrollment, and a test authentication.",
+      "field": {
+        "hardware": "Hardware available",
+        "enrolled": "Enrolled",
+        "types": "Supported types"
+      },
+      "type": {
+        "fingerprint": "Fingerprint",
+        "facial": "Face recognition",
+        "iris": "Iris"
+      },
+      "none": "None",
+      "action": {
+        "test": "Test authentication"
+      },
+      "result": {
+        "success": "Authentication succeeded.",
+        "failed": "Authentication failed: {error}"
+      }
     },
     "deep-links": {
       "title": "Deep Links",
-      "description": "Inspect and test NativeProbe's URI scheme."
+      "description": "Inspect and test NativeProbe's URI scheme.",
+      "field": {
+        "scheme": "Configured scheme",
+        "incomingUrl": "Last incoming URL"
+      },
+      "placeholder": "nativeprobe://probe/battery",
+      "action": {
+        "validate": "Validate",
+        "open": "Open"
+      },
+      "parsed": {
+        "title": "Parsed URI",
+        "scheme": "Scheme",
+        "hostname": "Host",
+        "path": "Path",
+        "queryParams": "Query params"
+      },
+      "none": "None yet."
     },
     "report": {
       "title": "Capability Report",
