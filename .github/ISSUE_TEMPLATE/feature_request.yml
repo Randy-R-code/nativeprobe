@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest a new probe or an improvement to an existing one
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's missing or could be better?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: >-
+        If this is a new probe, see the roadmap in README.md first —
+        several are already planned (Barometer, Pedometer, Camera,
+        Notifications, NFC, ...). If it's something else, describe what
+        you'd like to see.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: >-
+            This fits NativeProbe's scope (a device capability, testable
+            and interactive) — not a benchmark, cleaner, or scoring feature.
+          required: true

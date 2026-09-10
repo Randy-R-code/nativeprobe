@@ -13,16 +13,21 @@ export function ReportScreen() {
   const t = useT();
   const [report, setReport] = useState<CapabilityReportV1 | null>(null);
   const [copied, setCopied] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    buildCapabilityReport().then((next) => {
-      if (!cancelled) setReport(next);
-    });
+    buildCapabilityReport()
+      .then((next) => {
+        if (!cancelled) setReport(next);
+      })
+      .catch(() => {
+        if (!cancelled) setError(t('reportScreen.buildFailed'));
+      });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [t]);
 
   const json = report ? serializeReport(report) : null;
 
@@ -57,8 +62,8 @@ export function ReportScreen() {
         {json ? (
           <Text variant="mono">{json}</Text>
         ) : (
-          <Text variant="body-sm" className="text-muted-foreground">
-            {t('reportScreen.building')}
+          <Text variant="body-sm" className={error ? 'text-destructive' : 'text-muted-foreground'}>
+            {error ?? t('reportScreen.building')}
           </Text>
         )}
       </Card>

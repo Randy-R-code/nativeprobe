@@ -17,6 +17,7 @@ export function LocationScreen({ probe, status }: LocationScreenProps) {
   const t = useT();
   const [position, setPosition] = useState<Location.LocationObject | null>(null);
   const [tracking, setTracking] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const subscriptionRef = useRef<Location.LocationSubscription | null>(null);
 
   useEffect(() => {
@@ -29,27 +30,40 @@ export function LocationScreen({ probe, status }: LocationScreenProps) {
     const current = await Location.getForegroundPermissionsAsync();
     if (current.granted) return true;
     const requested = await Location.requestForegroundPermissionsAsync();
+    if (!requested.granted) {
+      setError(t('probe.location.permissionDenied'));
+    }
     return requested.granted;
   };
 
   const getCurrent = async () => {
+    setError(null);
     if (!(await ensurePermission())) return;
-    const next = await Location.getCurrentPositionAsync();
-    setPosition(next);
+    try {
+      const next = await Location.getCurrentPositionAsync();
+      setPosition(next);
+    } catch {
+      setError(t('probe.location.unavailable'));
+    }
   };
 
   const startTracking = async () => {
+    setError(null);
     if (!(await ensurePermission())) return;
-    const subscription = await Location.watchPositionAsync(
-      {
-        accuracy: Location.Accuracy.Balanced,
-        timeInterval: 1000,
-        distanceInterval: 1,
-      },
-      (next) => setPosition(next)
-    );
-    subscriptionRef.current = subscription;
-    setTracking(true);
+    try {
+      const subscription = await Location.watchPositionAsync(
+        {
+          accuracy: Location.Accuracy.Balanced,
+          timeInterval: 1000,
+          distanceInterval: 1,
+        },
+        (next) => setPosition(next)
+      );
+      subscriptionRef.current = subscription;
+      setTracking(true);
+    } catch {
+      setError(t('probe.location.unavailable'));
+    }
   };
 
   const stopTracking = () => {
@@ -76,6 +90,12 @@ export function LocationScreen({ probe, status }: LocationScreenProps) {
           onPress={tracking ? stopTracking : startTracking}
         />
       </View>
+
+      {error ? (
+        <Text variant="body-sm" className="text-destructive">
+          {error}
+        </Text>
+      ) : null}
 
       {position ? (
         <FieldList

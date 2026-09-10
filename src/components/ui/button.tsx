@@ -29,7 +29,11 @@ export type ButtonProps = PressableProps &
 export function Button({ label, variant, className, ...props }: ButtonProps) {
   const resolvedVariant = variant ?? 'primary';
   return (
-    <Pressable className={cn(buttonVariants({ variant: resolvedVariant }), className)} {...props}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      className={cn(buttonVariants({ variant: resolvedVariant }), className)}
+      {...props}>
       <Text variant="label" className={labelColor[resolvedVariant]}>
         {label}
       </Text>

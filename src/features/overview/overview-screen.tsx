@@ -36,7 +36,11 @@ export function OverviewScreen() {
           </Text>
         </View>
         <Link href="/about" asChild>
-          <Pressable className="mt-1 p-1" hitSlop={8}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t('nav.about')}
+            className="mt-1 p-1"
+            hitSlop={8}>
             <Ionicons
               name="information-circle-outline"
               size={24}

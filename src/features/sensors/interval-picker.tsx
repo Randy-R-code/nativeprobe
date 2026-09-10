@@ -20,6 +20,10 @@ export function IntervalPicker({ value, options, onChange, label }: IntervalPick
             <Pressable
               key={option}
               onPress={() => onChange(option)}
+              accessibilityRole="button"
+              accessibilityLabel={`${option}ms`}
+              accessibilityState={{ selected }}
+              hitSlop={4}
               className={cn(
                 'rounded-full border px-3 py-1.5',
                 selected ? 'border-primary bg-primary/10' : 'border-border'

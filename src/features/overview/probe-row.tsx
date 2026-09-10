@@ -24,14 +24,20 @@ export function ProbeRow({ probe, status }: ProbeRowProps) {
   const t = useT();
   const { colors } = useTheme();
 
+  const title = t(probe.titleKey);
+
   return (
     <Link href={probeHref(probe)} asChild>
-      <Pressable className="flex-row items-center gap-3 py-3 active:opacity-60">
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${title}, ${t(`status.${status}`)}`}
+        accessibilityHint={t(probe.descriptionKey)}
+        className="flex-row items-center gap-3 py-3 active:opacity-60">
         <View className="h-9 w-9 items-center justify-center rounded-full bg-muted">
           <Ionicons name={probe.icon} size={18} color={colors.foreground} />
         </View>
         <View className="flex-1">
-          <Text variant="label">{t(probe.titleKey)}</Text>
+          <Text variant="label">{title}</Text>
           <Text variant="caption" numberOfLines={1}>
             {t(probe.descriptionKey)}
           </Text>

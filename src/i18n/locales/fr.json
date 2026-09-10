@@ -154,7 +154,9 @@
         "startTracking": "Démarrer le suivi",
         "stopTracking": "Arrêter le suivi"
       },
-      "noPosition": "Aucune position pour l'instant."
+      "noPosition": "Aucune position pour l'instant.",
+      "permissionDenied": "La permission de localisation a été refusée.",
+      "unavailable": "Impossible d'obtenir une position pour l'instant — vérifie que les services de localisation sont activés."
     },
     "haptics": {
       "title": "Retour haptique",
@@ -203,6 +205,7 @@
         "validate": "Valider",
         "open": "Ouvrir"
       },
+      "openFailed": "Impossible d'ouvrir cette URL — aucune application n'est enregistrée pour la gérer.",
       "parsed": {
         "title": "URI analysée",
         "scheme": "Schéma",
@@ -237,6 +240,7 @@
     "title": "Rapport de capacités",
     "privacyNote": "Ce rapport contient uniquement la disponibilité des capacités (ex. « disponible », « permission requise ») — jamais de position précise, de contacts, de contenu du presse-papiers ou d'identifiants de suivi.",
     "building": "Génération du rapport…",
+    "buildFailed": "Impossible de générer le rapport. Réessaie.",
     "copy": "Copier le JSON",
     "copied": "Copié !",
     "share": "Partager"

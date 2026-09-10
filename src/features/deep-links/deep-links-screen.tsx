@@ -22,6 +22,7 @@ export function DeepLinksScreen({ probe, status }: DeepLinksScreenProps) {
   const [incomingUrl, setIncomingUrl] = useState<string | null>(null);
   const [input, setInput] = useState('');
   const [parsed, setParsed] = useState<ReturnType<typeof Linking.parse> | null>(null);
+  const [openError, setOpenError] = useState<string | null>(null);
 
   useEffect(() => {
     Linking.getInitialURL().then((url) => {
@@ -35,12 +36,16 @@ export function DeepLinksScreen({ probe, status }: DeepLinksScreenProps) {
 
   const handleValidate = () => {
     if (!input) return;
+    setOpenError(null);
     setParsed(Linking.parse(input));
   };
 
   const handleOpen = () => {
     if (!input) return;
-    Linking.openURL(input).catch(() => {});
+    setOpenError(null);
+    Linking.openURL(input).catch(() => {
+      setOpenError(t('probe.deep-links.openFailed'));
+    });
   };
 
   return (
@@ -62,6 +67,7 @@ export function DeepLinksScreen({ probe, status }: DeepLinksScreenProps) {
         placeholderTextColor={colors['muted-foreground']}
         autoCapitalize="none"
         autoCorrect={false}
+        accessibilityLabel={t('probe.deep-links.placeholder')}
         className="rounded-xl border border-border bg-card px-3 py-3 text-foreground"
       />
 
@@ -73,6 +79,12 @@ export function DeepLinksScreen({ probe, status }: DeepLinksScreenProps) {
         />
         <Button label={t('probe.deep-links.action.open')} onPress={handleOpen} />
       </View>
+
+      {openError ? (
+        <Text variant="body-sm" className="text-destructive">
+          {openError}
+        </Text>
+      ) : null}
 
       {parsed ? (
         <Card>

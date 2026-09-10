@@ -154,7 +154,9 @@
         "startTracking": "Start tracking",
         "stopTracking": "Stop tracking"
       },
-      "noPosition": "No position yet."
+      "noPosition": "No position yet.",
+      "permissionDenied": "Location permission was denied.",
+      "unavailable": "Could not get a location right now — check that location services are enabled."
     },
     "haptics": {
       "title": "Haptics",
@@ -203,6 +205,7 @@
         "validate": "Validate",
         "open": "Open"
       },
+      "openFailed": "Could not open this URL — no app is registered to handle it.",
       "parsed": {
         "title": "Parsed URI",
         "scheme": "Scheme",
@@ -237,6 +240,7 @@
     "title": "Capability Report",
     "privacyNote": "This report only includes capability availability (e.g. \"available\", \"permission required\") — never precise location, contacts, clipboard content, or tracking identifiers.",
     "building": "Building report…",
+    "buildFailed": "Could not build the report. Try again.",
     "copy": "Copy JSON",
     "copied": "Copied!",
     "share": "Share"
