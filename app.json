@@ -2,7 +2,7 @@
   "expo": {
     "name": "NativeProbe",
     "slug": "nativeprobe",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "scheme": "nativeprobe",
@@ -54,7 +54,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#05080B"
         }
-      ]
+      ],
+      "./plugins/withoutActivityRecognition"
     ],
     "extra": {
       "router": {},
