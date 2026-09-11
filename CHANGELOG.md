@@ -35,5 +35,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Missing `expo-font` peer dependency, duplicate native module installs, and
   a `@types/jest` version mismatch flagged by `expo-doctor`.
+- Native stack headers (probe detail, report, about) rendering with a light
+  background regardless of the active theme.
+- Long field values (e.g. biometrics supported types) overflowing their
+  card instead of wrapping.
+- Device rotation locked to portrait, blocking the Display probe's live
+  orientation tracking.
 
 [0.1.0]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.0

@@ -19,10 +19,12 @@ export function FieldList({ fields }: FieldListProps) {
         <View key={field.label} className="px-4">
           {index > 0 && <Separator />}
           <View className="flex-row items-center justify-between gap-3 py-3">
-            <Text variant="body-sm" className="text-muted-foreground">
+            <Text variant="body-sm" className="shrink-0 text-muted-foreground">
               {field.label}
             </Text>
-            <Text variant="mono">{field.value}</Text>
+            <Text variant="mono" className="shrink text-right">
+              {field.value}
+            </Text>
           </View>
         </View>
       ))}
