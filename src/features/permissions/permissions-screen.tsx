@@ -80,9 +80,11 @@ function PermissionCard({ descriptor }: { descriptor: PermissionDescriptor }) {
 
   return (
     <Card>
-      <View className="flex-row items-center justify-between">
-        <Text variant="label">{t(descriptor.labelKey)}</Text>
-        <Text variant="body-sm" className="text-muted-foreground">
+      <View className="flex-row items-center justify-between gap-3">
+        <Text variant="label" className="shrink">
+          {t(descriptor.labelKey)}
+        </Text>
+        <Text variant="body-sm" className="shrink-0 text-muted-foreground">
           {response ? t(statusKey[response.status]) : '…'}
         </Text>
       </View>

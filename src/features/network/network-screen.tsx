@@ -125,10 +125,12 @@ export function NetworkScreen({ probe, status }: NetworkScreenProps) {
               <View key={entry.id} className="px-4">
                 {index > 0 && <Separator />}
                 <View className="flex-row items-center justify-between gap-3 py-2">
-                  <Text variant="mono" className="text-muted-foreground">
+                  <Text variant="mono" className="shrink-0 text-muted-foreground">
                     {entry.time}
                   </Text>
-                  <Text variant="body-sm">{entry.message}</Text>
+                  <Text variant="body-sm" className="shrink text-right">
+                    {entry.message}
+                  </Text>
                 </View>
               </View>
             ))
