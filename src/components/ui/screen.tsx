@@ -10,7 +10,7 @@ export type ScreenProps = ViewProps & {
 export function Screen({ className, scroll = true, children, ...props }: ScreenProps) {
   const Container = scroll ? ScrollView : View;
   return (
-    <SafeAreaView className="flex-1 bg-background" edges={['top', 'bottom']}>
+    <SafeAreaView className="flex-1 bg-background" edges={['top', 'bottom', 'left', 'right']}>
       <Container
         className={cn('flex-1', className)}
         contentContainerClassName={scroll ? 'px-4 pb-8 pt-2' : undefined}
