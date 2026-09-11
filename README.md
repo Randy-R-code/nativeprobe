@@ -7,7 +7,27 @@
 
 NativeProbe is an open-source React Native playground for exploring, testing, and understanding real device capabilities. It's not a generic "device info" app or a benchmark tool — every probe lets you _do_ something: trigger a sensor, request a permission, watch a value change live, and see the Expo API behind it.
 
-Screenshots and a demo GIF are coming once the app is closer to a store release.
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src=".github/images/screenshots/overview-dark.jpg" width="260" alt="Overview screen, dark mode"></td>
+    <td><img src=".github/images/screenshots/overview-light.jpg" width="260" alt="Overview screen, light mode"></td>
+    <td><img src=".github/images/screenshots/display-dark.jpg" width="260" alt="Display probe, dark mode"></td>
+  </tr>
+  <tr>
+    <td><img src=".github/images/screenshots/network-dark.jpg" width="260" alt="Network probe, dark mode"></td>
+    <td><img src=".github/images/screenshots/magnetometer-dark.jpg" width="260" alt="Magnetometer probe, dark mode"></td>
+    <td><img src=".github/images/screenshots/biometrics-dark.jpg" width="260" alt="Biometrics probe, dark mode"></td>
+  </tr>
+  <tr>
+    <td><img src=".github/images/screenshots/battery-light.jpg" width="260" alt="Battery probe, light mode"></td>
+    <td><img src=".github/images/screenshots/haptics-light.jpg" width="260" alt="Haptics probe, light mode"></td>
+  </tr>
+</table>
+
+<img src=".github/images/screenshots/overview-landscape-dark.jpg" width="100%" alt="Overview screen in landscape, dark mode">
+<img src=".github/images/screenshots/deep-links-landscape-light.jpg" width="100%" alt="Deep Links probe in landscape, light mode">
 
 ## Key features
 
