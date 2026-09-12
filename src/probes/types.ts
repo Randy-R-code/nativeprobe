@@ -28,6 +28,7 @@ export type ProbeDefinition = {
   category: ProbeCategory;
   titleKey: TranslationKey;
   descriptionKey: TranslationKey;
+  infoKey: TranslationKey;
   platforms: ('ios' | 'android')[];
   icon: IconName;
   getAvailability: () => Promise<ProbeAvailability>;

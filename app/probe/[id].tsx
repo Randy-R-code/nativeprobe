@@ -7,9 +7,9 @@ import { getProbe } from '@/probes/registry';
 import { probeScreens } from '@/probes/screens';
 import type { ProbeAvailability, ProbeDefinition, ProbeId } from '@/probes/types';
 import { Ionicons } from '@expo/vector-icons';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 function PlaceholderScreen({
   probe,
@@ -44,6 +44,7 @@ export default function ProbeDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const probe = getProbe(id as ProbeId);
   const t = useT();
+  const { colors } = useTheme();
   const [status, setStatus] = useState<ProbeAvailability>('unknown');
 
   useEffect(() => {
@@ -74,7 +75,21 @@ export default function ProbeDetailScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ headerShown: true, title: t(probe.titleKey) }} />
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          title: '',
+          headerLeft: () => (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={t('probeDetail.goBack')}
+              hitSlop={12}
+              onPress={() => router.back()}>
+              <Ionicons name="chevron-back" size={26} color={colors.foreground} />
+            </Pressable>
+          ),
+        }}
+      />
       {ProbeScreenComponent ? (
         <ProbeScreenComponent probe={probe} status={status} />
       ) : (

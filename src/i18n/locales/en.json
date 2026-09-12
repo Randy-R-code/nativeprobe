@@ -36,6 +36,7 @@
     "device": {
       "title": "Device",
       "description": "Platform, OS version, model, and manufacturer for the current device.",
+      "info": "Shows the main device information exposed by the system, such as platform, OS version, model, and manufacturer. Useful for quickly identifying the real environment in which the app is running.",
       "field": {
         "platform": "Platform",
         "osVersion": "OS version",
@@ -56,6 +57,7 @@
     "display": {
       "title": "Display",
       "description": "Screen dimensions, pixel ratio, orientation, and safe area.",
+      "info": "Shows information about the current display, including dimensions, pixel density, orientation, and other available screen characteristics. Useful for understanding how an app sees the physical screen.",
       "field": {
         "width": "Width (pt)",
         "height": "Height (pt)",
@@ -71,6 +73,7 @@
     "battery": {
       "title": "Battery",
       "description": "Battery level, charging state, and low-power mode.",
+      "info": "Lets you inspect battery level and charging information exposed by the device. Values may change in real time depending on the platform and available APIs.",
       "field": {
         "level": "Battery level",
         "state": "Charging state",
@@ -87,6 +90,7 @@
     "network": {
       "title": "Network",
       "description": "Connection type, reachability, and a live event log.",
+      "info": "Shows the device's current network state and lets you observe connectivity changes. Try switching between Wi-Fi, cellular data, and offline mode to see how the app reacts.",
       "field": {
         "connected": "Connected",
         "type": "Network type",
@@ -113,19 +117,23 @@
     },
     "accelerometer": {
       "title": "Accelerometer",
-      "description": "Live X/Y/Z acceleration with start/stop controls."
+      "description": "Live X/Y/Z acceleration with start/stop controls.",
+      "info": "Measures the device's acceleration and movement across three axes. Move, tilt, or shake the phone to observe the X, Y, and Z values change in real time."
     },
     "gyroscope": {
       "title": "Gyroscope",
-      "description": "Live X/Y/Z rotation rate with start/stop controls."
+      "description": "Live X/Y/Z rotation rate with start/stop controls.",
+      "info": "Measures how quickly the device rotates around its three axes. Rotate the phone to observe angular velocity values update in real time."
     },
     "magnetometer": {
       "title": "Magnetometer",
-      "description": "Live X/Y/Z magnetic field readings."
+      "description": "Live X/Y/Z magnetic field readings.",
+      "info": "Measures the magnetic field around the device on three axes. It is commonly used for compass-like direction detection and can react to nearby magnetic objects."
     },
     "permissions": {
       "title": "Permissions",
       "description": "Status and request flow for every permission NativeProbe uses.",
+      "info": "Shows permission states and lets you test how permission requests behave on the current device. Useful for understanding granted, denied, restricted, and requestable states.",
       "item": {
         "location": "Location",
         "motion": "Motion & Fitness"
@@ -143,6 +151,7 @@
     "location": {
       "title": "Location",
       "description": "One-shot position and live tracking.",
+      "info": "Lets you inspect location data exposed by the device, such as coordinates and accuracy, and observe updates when live tracking is enabled.",
       "field": {
         "latitude": "Latitude",
         "longitude": "Longitude",
@@ -163,6 +172,7 @@
     "haptics": {
       "title": "Haptics",
       "description": "Trigger every supported haptic feedback style.",
+      "info": "Triggers the different haptic feedback patterns available on the device so you can feel and compare them directly. Haptic behavior can differ between Android and iOS devices.",
       "style": {
         "light": "Light impact",
         "medium": "Medium impact",
@@ -176,6 +186,7 @@
     "biometrics": {
       "title": "Biometrics",
       "description": "Hardware availability, enrollment, and a test authentication.",
+      "info": "Shows which biometric authentication capabilities are available on the device and lets you test the authentication flow where supported.",
       "field": {
         "hardware": "Hardware available",
         "enrolled": "Enrolled",
@@ -197,9 +208,10 @@
     },
     "deep-links": {
       "title": "Deep Links",
-      "description": "Inspect and test NativeProbe's URI scheme.",
+      "description": "Test deep links and see how the app handles them.",
+      "info": "Deep links can open a specific location inside an app instead of only launching its home screen. Use this probe to test links and see how NativeProbe handles them.",
       "field": {
-        "scheme": "Configured scheme",
+        "scheme": "Scheme",
         "incomingUrl": "Last incoming URL"
       },
       "placeholder": "nativeprobe://probe/battery",
@@ -219,12 +231,15 @@
     },
     "report": {
       "title": "Capability Report",
-      "description": "Generate and share a local summary of this device."
+      "description": "Generate and share a local summary of this device.",
+      "info": "Creates a shareable overview of the capabilities and relevant environment information detected on the current device. Useful for debugging, QA, and comparing behavior across devices."
     }
   },
   "probeDetail": {
     "notImplemented": "This probe isn't implemented yet.",
-    "builtWith": "Built with"
+    "builtWith": "Built with",
+    "whatIsThisFor": "What is this for?",
+    "goBack": "Go back"
   },
   "sensor": {
     "axisX": "X",

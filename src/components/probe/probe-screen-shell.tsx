@@ -1,3 +1,4 @@
+import { ProbeInfo } from '@/components/probe/probe-info';
 import { Card } from '@/components/ui/card';
 import { Screen } from '@/components/ui/screen';
 import { StatusChip } from '@/components/ui/status-chip';
@@ -48,6 +49,8 @@ export function ProbeScreenShell({
           {notes}
         </Text>
       ) : null}
+
+      <ProbeInfo text={t(probe.infoKey)} />
 
       <Card className="mt-6">
         <Text variant="section-label">{t('probeDetail.builtWith')}</Text>

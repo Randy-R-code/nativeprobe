@@ -5,6 +5,26 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-09-12
+
+### Added
+
+- A "What is this for?" explainer on every probe screen and the capability
+  report, with EN/FR copy describing what each probe actually does.
+
+### Changed
+
+- Probe detail headers now show a bare back chevron instead of repeating
+  the probe name already shown in the large in-content title.
+- Deep Links copy now favors "deep link" over the more technical "URI".
+- Splash logo width bumped from 144 to 168.
+
+### Fixed
+
+- Deep Links' configured scheme displayed as `nativeprobe:///` (an artifact
+  of `Linking.createURL('/')`) instead of the actual configured scheme. Now
+  read from `app.json` via `expo-constants`.
+
 ## [0.1.2] - 2026-09-11
 
 ### Fixed
@@ -62,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Landscape content not reserving left/right safe area, letting Android's
   on-screen navigation buttons draw over the app instead of beside it.
 
+[0.2.0]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.2.0
 [0.1.2]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.2
 [0.1.1]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.1
 [0.1.0]: https://github.com/Randy-R-code/nativeprobe/releases/tag/v0.1.0

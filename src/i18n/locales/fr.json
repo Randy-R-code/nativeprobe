@@ -36,6 +36,7 @@
     "device": {
       "title": "Appareil",
       "description": "Plateforme, version OS, modèle et fabricant de l'appareil actuel.",
+      "info": "Affiche les principales informations exposées par le système, comme la plateforme, la version de l'OS, le modèle et le fabricant. Utile pour identifier rapidement l'environnement réel dans lequel l'application s'exécute.",
       "field": {
         "platform": "Plateforme",
         "osVersion": "Version OS",
@@ -56,6 +57,7 @@
     "display": {
       "title": "Écran",
       "description": "Dimensions, ratio de pixels, orientation et zone sûre.",
+      "info": "Affiche les informations de l'écran actuel, comme ses dimensions, sa densité de pixels, son orientation et les autres caractéristiques disponibles. Utile pour comprendre comment l'application perçoit l'écran physique.",
       "field": {
         "width": "Largeur (pt)",
         "height": "Hauteur (pt)",
@@ -71,6 +73,7 @@
     "battery": {
       "title": "Batterie",
       "description": "Niveau de batterie, état de charge et mode basse consommation.",
+      "info": "Permet d'inspecter le niveau de batterie et les informations de charge exposées par l'appareil. Les valeurs peuvent évoluer en temps réel selon la plateforme et les API disponibles.",
       "field": {
         "level": "Niveau de batterie",
         "state": "État de charge",
@@ -87,6 +90,7 @@
     "network": {
       "title": "Réseau",
       "description": "Type de connexion, accessibilité et journal d'événements en direct.",
+      "info": "Affiche l'état réseau actuel de l'appareil et permet d'observer les changements de connexion. Essayez de passer du Wi-Fi aux données mobiles ou au mode hors ligne pour voir comment l'application réagit.",
       "field": {
         "connected": "Connecté",
         "type": "Type de réseau",
@@ -113,19 +117,23 @@
     },
     "accelerometer": {
       "title": "Accéléromètre",
-      "description": "Valeurs X/Y/Z en direct avec contrôles start/stop."
+      "description": "Valeurs X/Y/Z en direct avec contrôles start/stop.",
+      "info": "Mesure l'accélération et les mouvements de l'appareil sur trois axes. Bougez, inclinez ou secouez le téléphone pour observer les valeurs X, Y et Z évoluer en temps réel."
     },
     "gyroscope": {
       "title": "Gyroscope",
-      "description": "Vitesse de rotation X/Y/Z en direct avec contrôles start/stop."
+      "description": "Vitesse de rotation X/Y/Z en direct avec contrôles start/stop.",
+      "info": "Mesure la vitesse de rotation de l'appareil autour de ses trois axes. Faites pivoter le téléphone pour observer les valeurs de vitesse angulaire évoluer en temps réel."
     },
     "magnetometer": {
       "title": "Magnétomètre",
-      "description": "Mesures du champ magnétique X/Y/Z en direct."
+      "description": "Mesures du champ magnétique X/Y/Z en direct.",
+      "info": "Mesure le champ magnétique autour de l'appareil sur trois axes. Il est notamment utilisé pour déterminer une direction comme une boussole et peut réagir aux objets magnétiques proches."
     },
     "permissions": {
       "title": "Permissions",
       "description": "Statut et demande pour chaque permission utilisée par NativeProbe.",
+      "info": "Affiche l'état des autorisations et permet de tester le comportement des demandes de permission sur l'appareil actuel. Utile pour comprendre les états accordé, refusé, restreint ou redemandable.",
       "item": {
         "location": "Localisation",
         "motion": "Mouvement et forme"
@@ -143,6 +151,7 @@
     "location": {
       "title": "Localisation",
       "description": "Position ponctuelle et suivi en direct.",
+      "info": "Permet d'inspecter les données de localisation exposées par l'appareil, comme les coordonnées et la précision, et d'observer leur évolution lorsque le suivi en direct est activé.",
       "field": {
         "latitude": "Latitude",
         "longitude": "Longitude",
@@ -163,6 +172,7 @@
     "haptics": {
       "title": "Retour haptique",
       "description": "Déclenchez chaque style de retour haptique supporté.",
+      "info": "Déclenche les différents retours haptiques disponibles afin de les ressentir et de les comparer directement. Leur comportement peut varier entre les appareils Android et iOS.",
       "style": {
         "light": "Impact léger",
         "medium": "Impact moyen",
@@ -176,6 +186,7 @@
     "biometrics": {
       "title": "Biométrie",
       "description": "Disponibilité matérielle, enrôlement et test d'authentification.",
+      "info": "Affiche les capacités d'authentification biométrique disponibles sur l'appareil et permet de tester le flux d'authentification lorsqu'il est pris en charge.",
       "field": {
         "hardware": "Matériel disponible",
         "enrolled": "Enrôlé",
@@ -197,9 +208,10 @@
     },
     "deep-links": {
       "title": "Deep Links",
-      "description": "Inspectez et testez le schéma d'URI de NativeProbe.",
+      "description": "Testez des deep links et observez comment l'application les interprète.",
+      "info": "Les deep links permettent d'ouvrir directement un emplacement précis dans une application au lieu de simplement afficher son écran d'accueil. Utilisez ce probe pour tester des liens et observer comment NativeProbe les interprète.",
       "field": {
-        "scheme": "Schéma configuré",
+        "scheme": "Schéma",
         "incomingUrl": "Dernière URL entrante"
       },
       "placeholder": "nativeprobe://probe/battery",
@@ -219,12 +231,15 @@
     },
     "report": {
       "title": "Rapport de capacités",
-      "description": "Générez et partagez un résumé local de cet appareil."
+      "description": "Générez et partagez un résumé local de cet appareil.",
+      "info": "Crée un aperçu partageable des capacités détectées et des informations pertinentes de l'environnement actuel. Utile pour le debug, la QA et la comparaison du comportement entre plusieurs appareils."
     }
   },
   "probeDetail": {
     "notImplemented": "Cette sonde n'est pas encore implémentée.",
-    "builtWith": "Construit avec"
+    "builtWith": "Construit avec",
+    "whatIsThisFor": "À quoi ça sert ?",
+    "goBack": "Retour"
   },
   "sensor": {
     "axisX": "X",

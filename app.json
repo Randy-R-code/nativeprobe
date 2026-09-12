@@ -2,7 +2,7 @@
   "expo": {
     "name": "NativeProbe",
     "slug": "nativeprobe",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "scheme": "nativeprobe",
@@ -50,7 +50,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/splash-icon.png",
-          "imageWidth": 144,
+          "imageWidth": 168,
           "resizeMode": "contain",
           "backgroundColor": "#05080B"
         }

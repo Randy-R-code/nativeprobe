@@ -1,3 +1,4 @@
+import { ProbeInfo } from '@/components/probe/probe-info';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Screen } from '@/components/ui/screen';
@@ -67,6 +68,8 @@ export function ReportScreen() {
           </Text>
         )}
       </Card>
+
+      <ProbeInfo text={t('probe.report.info')} />
     </Screen>
   );
 }

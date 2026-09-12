@@ -6,6 +6,7 @@ import { Text } from '@/components/ui/text';
 import { useT } from '@/i18n/i18n-provider';
 import { useTheme } from '@/lib/theme-context';
 import type { ProbeAvailability, ProbeDefinition } from '@/probes/types';
+import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
 import { useEffect, useState } from 'react';
 import { TextInput, View } from 'react-native';
@@ -18,7 +19,11 @@ export type DeepLinksScreenProps = {
 export function DeepLinksScreen({ probe, status }: DeepLinksScreenProps) {
   const t = useT();
   const { colors } = useTheme();
-  const scheme = Linking.createURL('/');
+  // Linking.createURL('/') appends a path segment, producing "nativeprobe:///"
+  // instead of the actual configured scheme — read it straight from app.json.
+  const configuredScheme = Constants.expoConfig?.scheme;
+  const schemeName = Array.isArray(configuredScheme) ? configuredScheme[0] : configuredScheme;
+  const scheme = schemeName ? `${schemeName}://` : Linking.createURL('/');
   const [incomingUrl, setIncomingUrl] = useState<string | null>(null);
   const [input, setInput] = useState('');
   const [parsed, setParsed] = useState<ReturnType<typeof Linking.parse> | null>(null);
