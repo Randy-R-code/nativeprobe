@@ -26,9 +26,6 @@ NativeProbe is an open-source React Native playground for exploring, testing, an
   </tr>
 </table>
 
-<img src=".github/images/screenshots/overview-landscape-dark.jpg" width="100%" alt="Overview screen in landscape, dark mode">
-<img src=".github/images/screenshots/deep-links-landscape-light.jpg" width="100%" alt="Deep Links probe in landscape, light mode">
-
 ## Key features
 
 - **13 interactive probes** across device info, live sensors, and system APIs — see the list below.
