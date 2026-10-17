@@ -5,6 +5,8 @@
 
 > Explore what your device can actually do.
 
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.randycode.nativeprobe)
+
 NativeProbe is an open-source React Native playground for exploring, testing, and understanding real device capabilities. It's not a generic "device info" app or a benchmark tool — every probe lets you _do_ something: trigger a sensor, request a permission, watch a value change live, and see the Expo API behind it.
 
 ## Screenshots
