@@ -5,7 +5,7 @@
 
 > Explore what your device can actually do.
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.randycode.nativeprobe)
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.randycode.nativeprobe) · [Case study](https://randy-code.dev/projects/nativeprobe)
 
 NativeProbe is an open-source React Native playground for exploring, testing, and understanding real device capabilities. It's not a generic "device info" app or a benchmark tool — every probe lets you _do_ something: trigger a sensor, request a permission, watch a value change live, and see the Expo API behind it.
 
@@ -14,17 +14,17 @@ NativeProbe is an open-source React Native playground for exploring, testing, an
 <table>
   <tr>
     <td><img src=".github/images/screenshots/overview-dark.jpg" width="260" alt="Overview screen, dark mode"></td>
-    <td><img src=".github/images/screenshots/overview-light.jpg" width="260" alt="Overview screen, light mode"></td>
-    <td><img src=".github/images/screenshots/display-dark.jpg" width="260" alt="Display probe, dark mode"></td>
-  </tr>
-  <tr>
-    <td><img src=".github/images/screenshots/network-dark.jpg" width="260" alt="Network probe, dark mode"></td>
     <td><img src=".github/images/screenshots/magnetometer-dark.jpg" width="260" alt="Magnetometer probe, dark mode"></td>
     <td><img src=".github/images/screenshots/biometrics-dark.jpg" width="260" alt="Biometrics probe, dark mode"></td>
   </tr>
   <tr>
-    <td><img src=".github/images/screenshots/battery-light.jpg" width="260" alt="Battery probe, light mode"></td>
     <td><img src=".github/images/screenshots/haptics-light.jpg" width="260" alt="Haptics probe, light mode"></td>
+    <td><img src=".github/images/screenshots/network-dark.jpg" width="260" alt="Network probe, dark mode"></td>
+    <td><img src=".github/images/screenshots/display-dark.jpg" width="260" alt="Display probe, dark mode"></td>
+  </tr>
+  <tr>
+    <td><img src=".github/images/screenshots/battery-light.jpg" width="260" alt="Battery probe, light mode"></td>
+    <td><img src=".github/images/screenshots/overview-light.jpg" width="260" alt="Overview screen, light mode"></td>
   </tr>
 </table>
 
@@ -127,6 +127,8 @@ on your device unless you explicitly copy or share a generated Capability
 Report — and even then, the report never includes precise location
 coordinates, contacts, clipboard content, or tracking identifiers. See
 [SECURITY.md](SECURITY.md) for how to report a vulnerability.
+
+Full privacy policy: <https://randy-code.dev/privacy/nativeprobe>
 
 ## License
 
