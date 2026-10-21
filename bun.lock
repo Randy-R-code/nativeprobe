@@ -9,6 +9,7 @@
         "clsx": "^2.1.1",
         "expo": "~57.0.22",
         "expo-battery": "~57.0.3",
+        "expo-build-properties": "~57.0.22",
         "expo-clipboard": "~57.0.2",
         "expo-constants": "~57.0.18",
         "expo-dev-client": "~57.0.19",
@@ -5027,6 +5028,20 @@
       "",
       { "peerDependencies": { "expo": "*", "react": "*" } },
       "sha512-FZcwhvLC+LXjDwrPapRQ+71ULyGM2AMIGmmZzZScGYuaMrfTH3oX6otxbkCbePj66nUGHNExLkIzKNGVhLSO7g==",
+    ],
+
+    "expo-build-properties": [
+      "expo-build-properties@57.0.22",
+      "",
+      {
+        "dependencies": {
+          "@expo/schema-utils": "^57.0.2",
+          "resolve-from": "^5.0.0",
+          "semver": "^7.6.0",
+        },
+        "peerDependencies": { "expo": "*" },
+      },
+      "sha512-A5oRf2I02XDRu2NnqKo7Au5kUu244unvyoRMUsB+xvg/BOlsR+G/oyDFGkjbda1cJbeKm9eqposIXbA2ri5UrQ==",
     ],
 
     "expo-clipboard": [

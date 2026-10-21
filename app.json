@@ -2,7 +2,7 @@
   "expo": {
     "name": "NativeProbe",
     "slug": "nativeprobe",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "scheme": "nativeprobe",
@@ -55,7 +55,16 @@
           "backgroundColor": "#05080B"
         }
       ],
-      "./plugins/withoutActivityRecognition"
+      "./plugins/withoutActivityRecognition",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          }
+        }
+      ]
     ],
     "extra": {
       "router": {},
